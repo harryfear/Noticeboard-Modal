@@ -13,14 +13,6 @@ Noticeboard Modal is a lightweight, customizable full-screen modal for displayin
 - Production-ready with minimal footprint
 - WordPress integration support
 
-## Screenshots
-
-### Screenshot 1
-![Screenshot 1](/screen-init.png)
-
-### Screenshot 2
-![Screenshot 2](/screen-reinit.png)
-
 ## Installation
 
 Add the following script tag to your HTML file, preferably just before the closing `</body>` tag:
@@ -84,6 +76,14 @@ modal.reinit({
 
 - `reinit(newConfig)`: Reinitialize the modal with new configuration options
 - `remove()`: Remove the modal from the DOM and clear localStorage
+
+## Screenshots
+
+### Screenshot 1
+![Screenshot 1](/screen-init.png)
+
+### Screenshot 2
+![Screenshot 2](/screen-reinit.png)
 
 ## WordPress Integration
 
