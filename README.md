@@ -16,10 +16,10 @@ Noticeboard Modal is a lightweight, customizable full-screen modal for displayin
 ## Screenshots
 
 ### Screenshot 1
-![Screenshot 1](/screenshot-init.png)
+![Screenshot 1](/screen-init.png)
 
 ### Screenshot 2
-![Screenshot 2](/screenshot-reinit.png)
+![Screenshot 2](/screen-reinit.png)
 
 ## Installation
 
