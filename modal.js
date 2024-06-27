@@ -27,22 +27,25 @@ class NoticeBoardModal {
         if (modalShown === this.config.version) return false;
 
         const currentPath = window.location.pathname;
-        
-        // Check if current path is in the exclude list
-        if (this.config.exclude.some(path => currentPath.startsWith(path))) {
+        const currentPage = currentPath.split('/').pop(); // Get the current page name
+
+        // Check if current path or page name is in the exclude list
+        if             currentPath === path || 
+            currentPath.startsWith(path) || 
+            currentPage === path
+        )) {
             return false;
         }
 
         // Check if current path matches the target
         if (this.config.target === '*') {
-            return true;
-        } else if (this.config.target === '/') {
-            return currentPath === '/';
+               } else if (this.config.target === '/') {
+            return currentPath === '/' || currentPath === '';
         } else {
             return currentPath.startsWith(this.config.target);
         }
     }
-
+    
     createModalElement() {
         this.modalElement = document.createElement('div');
         this.modalElement.id = 'notice-board-modal';
