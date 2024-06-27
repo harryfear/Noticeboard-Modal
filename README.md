@@ -33,14 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
         heading: 'Welcome to Our Site!',
         bodyText: 'We have some important information for you.',
         ctaText: 'Get Started',
-        ctaByline: 'Limited Time Offer', // Optional
+        ctaByline: 'Limited Time Offer',
         backgroundColor: 'rgba(0, 0, 128, 0.9)',
         textColor: '#ffffff',
         ctaColor: '#FFA500',
-        version: '1.0'
+        version: '1.0',
+        target: '*',
+        exclude: ['/privacy', '/terms']
     });
 });
 ```
+
+In this above example, the modal will show on all pages except those starting with '/privacy' or '/terms'.
 
 To reinitialize the modal with new content:
 
@@ -69,7 +73,7 @@ modal.reinit({
 | ctaColor         | string   | '#007bff'                                        | Background color of the call-to-action button         |
 | version          | string   | '1.0'                                            | Version string for tracking acknowledgments           |
 | showDays         | number   | 1                                                | Number of days to remember user acknowledgment        |
-| target           | string   | '*'                                              | URL pattern to show the modal on ('*' for all pages)  |
+| target           | string   | '*'                                              | URL pattern to show the modal on ('*' for all pages, '/' for homepage only) |
 | exclude          | array    | []                                               | Array of URL patterns to exclude from showing the modal |
 
 ## Methods
@@ -149,6 +153,10 @@ Choose the method that best fits your WordPress setup and requirements. The `wp_
 [Claude 3.5 Sonnet](https://claude.ai/chat/2064264a-92d0-41d8-b616-78f3c4eef46e) (with approximately `11` prompts) and [ChatGPT 4](https://chatgpt.com/c/4466eb66-a1c1-4c89-b28e-4c662b5aa4de) with `1` prompt
 
 ## Changelog
+
+### v1.7.1
+- Fixed: Restored `target` and `exclude` functionality that was accidentally removed
+- Updated: README to clearly explain `target` and `exclude` options
 
 ### v1.7.0
 - Added WordPress integration methods (wp_enqueue_scripts and wp_head)
