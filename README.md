@@ -161,6 +161,9 @@ Choose the method that best fits your WordPress setup and requirements. The `wp_
 
 ## Changelog
 
+### v1.9.1
+- Fixes syntax typo
+
 ### v1.9.0
 - By default skips display for GoogleBot and other crawlers for SEO purposes
 
