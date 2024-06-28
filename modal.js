@@ -123,7 +123,7 @@
                     box-sizing: border-box;
                 ">
                     <h1 style="color: ${this.config.textColor}; margin-bottom: 1rem; font-size: 3rem;">${this.config.heading}</h1>
-                    <p style="color: ${this.config.textColor}; margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center;">${bodyTextWithBreaks}</p>
+                    <p style="color: ${this.config.textColor}; margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center; line-height: 1.3;">${bodyTextWithBreaks}</p>
                     <button class="notice-board-modal-button" style="
                         border: none;
                         padding: ${this.config.ctaByline ? '1.3rem 1.5rem' : '0.75rem 1.5rem'};
