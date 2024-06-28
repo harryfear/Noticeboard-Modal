@@ -21,7 +21,8 @@
                 showDays: 7,
                 target: '*',
                 exclude: [],
-                callback: null,
+                callback: null,,
+                skipForCrawlers: true,
                 ...config
             };
 
@@ -35,6 +36,11 @@
         }
 
         shouldShowModal() {
+            // Check for crawlers first
+            if (this.config.skipForCrawlers && this.isCrawler()) {
+                return false;
+            }
+        
             const modalLastShown = localStorage.getItem(`noticeBoardModalLastShown_v${this.config.version}`);
             if (modalLastShown) {
                 const daysSinceLastShown = (Date.now() - parseInt(modalLastShown)) / (1000 * 60 * 60 * 24);
@@ -65,6 +71,17 @@
             } else {
                 return currentPath.startsWith(this.config.target.toLowerCase());
             }
+        }
+            
+        isCrawler() {
+            const crawlers = [
+                'googlebot', 'bingbot', 'yandexbot', 'duckduckbot', 'slurp',
+                'baiduspider', 'facebookexternalhit', 'twitterbot', 'rogerbot',
+                'linkedinbot', 'embedly', 'quora link preview', 'showyoubot',
+                'outbrain', 'pinterest', 'slackbot', 'vkShare', 'W3C_Validator'
+            ];
+            const userAgent = navigator.userAgent.toLowerCase();
+            return crawlers.some(crawler => userAgent.indexOf(crawler) !== -1);
         }
 
         createModalElement() {
