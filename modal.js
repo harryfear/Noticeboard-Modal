@@ -21,7 +21,7 @@
                 showDays: 7,
                 target: '*',
                 exclude: [],
-                callback: null,,
+                callback: null,
                 skipForCrawlers: true,
                 ...config
             };
