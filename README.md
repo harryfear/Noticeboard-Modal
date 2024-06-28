@@ -39,7 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
         ctaColor: '#FFA500',
         version: '1.0',
         target: '*',
-        exclude: ['/privacy', '/terms']
+        exclude: ['/privacy', '/terms'],
+        callback: function() {
+            console.log('User interacted with the modal');
+            // Perform any action after user interaction
+        }
     });
 });
 ```
@@ -75,6 +79,7 @@ modal.reinit({
 | showDays         | number   | 1                                                | Number of days to remember user acknowledgment        |
 | target           | string   | '*'                                              | URL pattern to show the modal on ('*' for all pages, '/' for homepage only) |
 | exclude          | array    | []                                               | Array of URL patterns to exclude from showing the modal |
+| callback         | function | null                                             | Function to call after user interacts with the modal  |
 
 ## Methods
 
@@ -153,6 +158,9 @@ Choose the method that best fits your WordPress setup and requirements. The `wp_
 [Claude 3.5 Sonnet](https://claude.ai/chat/2064264a-92d0-41d8-b616-78f3c4eef46e) (with approximately `11` prompts) and [ChatGPT 4](https://chatgpt.com/c/4466eb66-a1c1-4c89-b28e-4c662b5aa4de) with `1` prompt
 
 ## Changelog
+
+### v1.8.0
+- Added callback function option for post-interaction actions
 
 ### v1.7.1
 - Fixed: Restored `target` and `exclude` functionality that was accidentally removed
