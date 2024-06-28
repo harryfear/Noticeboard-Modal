@@ -11,7 +11,8 @@ Noticeboard Modal is a lightweight, customizable full-screen modal for displayin
 - Remembers user acknowledgment using localStorage
 - Easy to remove or reinitialize with new content
 - Production-ready with minimal footprint
-- WordPress integration support
+- Option to skip display for web crawlers to improve SEO
+- Version-specific display control to ensure users see updated content
 
 ## Installation
 
@@ -80,6 +81,7 @@ modal.reinit({
 | target           | string   | '*'                                              | URL pattern to show the modal on ('*' for all pages, '/' for homepage only) |
 | exclude          | array    | []                                               | Array of URL patterns to exclude from showing the modal |
 | callback         | function | null                                             | Function to call after user interacts with the modal  |
+| skipForCrawlers  | boolean  | true                                             | Whether to skip showing the modal for web crawlers    |
 
 ## Methods
 
@@ -158,6 +160,9 @@ Choose the method that best fits your WordPress setup and requirements. The `wp_
 [Claude 3.5 Sonnet](https://claude.ai/chat/2064264a-92d0-41d8-b616-78f3c4eef46e) (with approximately `11` prompts) and [ChatGPT 4](https://chatgpt.com/c/4466eb66-a1c1-4c89-b28e-4c662b5aa4de) with `1` prompt
 
 ## Changelog
+
+### v1.9.0
+- By default skips display for GoogleBot and other crawlers for SEO purposes
 
 ### v1.8.1
 - Fixed: Horizontal centering for body text
