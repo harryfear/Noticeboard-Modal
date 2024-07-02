@@ -7,7 +7,7 @@
                 instance.reinit(config);
                 return instance;
             }
-
+    
             this.config = {
                 fontFamily: 'Arial, sans-serif',
                 heading: 'Notice',
@@ -25,13 +25,13 @@
                 skipForCrawlers: true,
                 ...config
             };
-
+    
             if (this.shouldShowModal()) {
                 this.createModalElement();
                 this.createModal();
                 this.showModal();
             }
-
+    
             instance = this;
         }
 
@@ -104,38 +104,39 @@
                 z-index: 99999;
                 background-color: ${this.config.backgroundColor};
                 font-family: ${this.config.fontFamily};
+                font-size: max(1rem, 3.5vmin);
             `;
-
+    
             let ctaContent = `<span class="line1">${this.config.ctaText}</span>`;
             if (this.config.ctaByline) {
                 ctaContent += `<br><span class="line2">${this.config.ctaByline}</span>`;
             }
-
+    
             // Replace \n with <br> for line breaks in body text
             const bodyTextWithBreaks = this.config.bodyText.replace(/\n/g, '<br>');
-
+    
             const modalContent = `
                 <div class="notice-board-modal-content" style="
                     text-align: center;
                     max-width: 80%;
                     width: 100%;
-                    padding: 2rem;
+                    padding: 2em;
                     box-sizing: border-box;
                 ">
-                    <h1 style="color: ${this.config.textColor}; margin-bottom: 1rem; font-size: 3rem;">${this.config.heading}</h1>
-                    <p style="color: ${this.config.textColor}; margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center; line-height: 1.3;">${bodyTextWithBreaks}</p>
+                    <h1 style="color: ${this.config.textColor}; margin-bottom: 0.5em; font-size: 2em;">${this.config.heading}</h1>
+                    <p style="color: ${this.config.textColor}; margin-bottom: 1em; font-size: 1em; text-align: center; line-height: 1.4;">${bodyTextWithBreaks}</p>
                     <button class="notice-board-modal-button" style="
                         border: none;
-                        padding: ${this.config.ctaByline ? '1.3rem 1.5rem' : '0.75rem 1.5rem'};
-                        border-radius: 4px;
+                        padding: ${this.config.ctaByline ? '0.8em 1em' : '0.5em 1em'};
+                        border-radius: 0.25em;
                         cursor: pointer;
-                        font-size: 1.2rem;
-                        margin-top: 2rem;
+                        font-size: 1em;
+                        margin-top: 1em;
                         transition: opacity 0.3s ease;
                         background-color: ${this.config.ctaColor};
                         color: #ffffff;
                         text-align: center;
-                        line-height: ${this.config.ctaByline ? '0.75rem' : 'normal'};
+                        line-height: ${this.config.ctaByline ? '1.2' : 'normal'};
                     ">${ctaContent}</button>
                 </div>
             `;
@@ -144,7 +145,7 @@
             button.addEventListener('click', () => this.handleAction());
             button.addEventListener('mouseover', () => button.style.opacity = '0.9');
             button.addEventListener('mouseout', () => button.style.opacity = '1');
-
+    
             const style = document.createElement('style');
             style.textContent = `
                 .notice-board-modal-button .line1 {
