@@ -161,6 +161,12 @@ Choose the method that best fits your WordPress setup and requirements. The `wp_
 
 ## Changelog
 
+### v1.10.0
+- Improved responsiveness by using `font-size: max(1rem, 3.5vmin)` on the modal container
+- Switched to em units throughout for better scalability
+- Increased body text line height to 1.4 for improved readability
+- Updated all sizing to be relative to the new root font size
+
 ### v1.9.2
 - Improves line height on body text
 
