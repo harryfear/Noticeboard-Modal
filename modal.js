@@ -104,7 +104,7 @@
                 z-index: 99999;
                 background-color: ${this.config.backgroundColor};
                 font-family: ${this.config.fontFamily};
-                font-size: clamp(22px, 3vw, 48px);
+                font-size: clamp(22px, 3.5vw, 48px);
             `;
     
             let ctaContent = `<span class="line1">${this.config.ctaText}</span>`;
